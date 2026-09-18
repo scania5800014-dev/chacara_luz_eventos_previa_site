@@ -1,0 +1,6 @@
+{
+  "name": "Chácara Espaço Luz Eventos",
+  "description": "Landing page premium e luxuosa da Chácara Espaço Luz Eventos em Timon-MA para locação de eventos, aniversários e confraternizações.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

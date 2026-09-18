@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --gold-primary: #D4AF37;
+    --gold-light: #F3C64F;
+    --gold-dark: #A47E1B;
+    --black-deep: #0B0B0C;
+    --black-surface: #121214;
+    --black-elevated: #18181B;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+}
+
+.font-serif-luxury {
+  font-family: 'Cinzel', serif;
+}
+
+.font-serif-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-clean {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FDE68A 0%, #D4AF37 50%, #B48512 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #F5D77F 0%, #D4AF37 50%, #B8860B 100%);
+}
+
+.gold-border-glow {
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.15);
+}
+
+.luxury-card {
+  background-color: rgba(18, 18, 20, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.luxury-card:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 12px 32px -10px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(212, 175, 55, 0.18);
+}
