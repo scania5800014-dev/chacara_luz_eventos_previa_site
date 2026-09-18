@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, MapPin, Heart, Sparkles, CheckCircle2, ShieldCheck, Clock } from 'lucide-react';
-import { VENUE_INFO, TESTIMONIALS } from '../data/content';
+import { VENUE_INFO, TESTIMONIALS, IMAGES, FALLBACK_URLS } from '../data/content';
 
 export const AboutUs: React.FC = () => {
   return (
@@ -116,11 +116,17 @@ export const AboutUs: React.FC = () => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-[#D4AF37]/30 shadow-2xl shadow-black/80 bg-[#121214] group">
               <img
-                src="/images/chacara-area-social.jpg"
+                src={IMAGES.socialArea}
                 alt="Área da piscina e convivência da Chácara Espaço Luz Eventos"
                 loading="lazy"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (target.src !== FALLBACK_URLS.maps2) {
+                    target.src = FALLBACK_URLS.maps2;
+                  }
+                }}
                 className="w-full h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-transparent to-transparent opacity-80" />

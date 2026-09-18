@@ -82,6 +82,14 @@ export const Gallery: React.FC = () => {
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (item.fallbackUrl && target.src !== item.fallbackUrl) {
+                      target.src = item.fallbackUrl;
+                    } else if (!target.src.includes('/images/foto-maps-1.jpg')) {
+                      target.src = '/images/foto-maps-1.jpg';
+                    }
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
 
@@ -192,6 +200,14 @@ export const Gallery: React.FC = () => {
                   className="max-h-[68vh] w-auto object-contain rounded-lg"
                   loading="lazy"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (selectedItem.fallbackUrl && target.src !== selectedItem.fallbackUrl) {
+                      target.src = selectedItem.fallbackUrl;
+                    } else if (!target.src.includes('/images/foto-maps-1.jpg')) {
+                      target.src = '/images/foto-maps-1.jpg';
+                    }
+                  }}
                 />
               </div>
 

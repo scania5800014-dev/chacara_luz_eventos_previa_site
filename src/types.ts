@@ -35,6 +35,7 @@ export interface GalleryMediaItem {
   category: 'all' | 'piscina' | 'eventos' | 'estrutura';
   alt: string;
   caption?: string;
+  fallbackUrl?: string;
   aspectRatio?: 'landscape' | 'portrait' | 'square';
 }
 

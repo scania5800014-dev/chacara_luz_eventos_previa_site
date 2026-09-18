@@ -1,6 +1,6 @@
 import React from 'react';
 import { Star, MessageSquare, CalendarCheck, MapPin, ShieldCheck, Waves, Armchair } from 'lucide-react';
-import { VENUE_INFO } from '../data/content';
+import { VENUE_INFO, IMAGES, FALLBACK_URLS } from '../data/content';
 
 export const Hero: React.FC = () => {
   return (
@@ -12,15 +12,21 @@ export const Hero: React.FC = () => {
       {/* Background Image with Depth & Dark Luxury Vignette */}
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <img
-          src="/images/foto-maps-1.jpg"
-          alt="Piscina e área de lazer da Chácara Espaço Luz Eventos em Timon-MA"
-          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.38] contrast-[1.05]"
+          src={IMAGES.hero}
+          alt="Piscina com cascata e área de lazer da Chácara Espaço Luz Eventos em Timon-MA"
+          className="w-full h-full object-cover object-center scale-105 filter brightness-[0.62] contrast-[1.05]"
           fetchPriority="high"
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== FALLBACK_URLS.maps1) {
+              target.src = FALLBACK_URLS.maps1;
+            }
+          }}
         />
         {/* Multilayer Luxury Overlays for Text Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-[#0B0B0C]/75 to-[#0B0B0C]/60" />
-        <div className="absolute inset-0 bg-radial from-transparent via-[#0B0B0C]/40 to-[#0B0B0C]/90" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0C] via-[#0B0B0C]/65 to-[#0B0B0C]/45" />
+        <div className="absolute inset-0 bg-radial from-transparent via-[#0B0B0C]/30 to-[#0B0B0C]/85" />
         {/* Warm Ambient Gold Glow Accent */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none" />
       </div>

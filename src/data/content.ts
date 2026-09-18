@@ -1,5 +1,32 @@
 import { NavItem, Amenity, PricingPlan, GalleryMediaItem, Testimonial } from '../types';
 
+// Import local bundled images
+import fotoMaps1 from '../assets/images/foto-maps-1.jpg';
+import fotoMaps2 from '../assets/images/foto-maps-2.jpg';
+import fotoMaps3 from '../assets/images/foto-maps-3.jpg';
+import fotoMaps4 from '../assets/images/foto-maps-4.jpg';
+import chacaraPiscina from '../assets/images/chacara-piscina.jpg';
+import chacaraAreaSocial from '../assets/images/chacara-area-social.jpg';
+import chacaraEstrutura from '../assets/images/chacara-estrutura.jpg';
+
+export const FALLBACK_URLS = {
+  maps1: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWmCMDByyZCRIyUjOFKgdXpGVOmg9iZlxJOpKVC_o6xZrUehfQAgbdgjdskkFPTi5hyI9T0erCtrYtCNEAcHbzZSYl8OigFCbxaM71BkfTUZKn3UKVurIK1EwDeKohG6-SiueMZd9Q=w1200',
+  maps2: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWlv0uT5gQXQlOfyVnW49vOuB4VbNzgDJXotf-GdVjNEMA9zAjNwEPPhFqBjr2m0xfRz35Rx4mPItDXU5mh8Xk0k33Lg1OppwkEvxdX6eDSr4THOACeX5sQx-SUok_jGQPqsZ8Pq=w1200',
+  maps3: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWnStCvLO_nPvgJwsmCIPvQCiiklBIWM_oQ_xfzXPFZ2gqlRMMERREDI10V1E_U1Eu3oke66y0XZIlBsqrrFcZkq-VKh8x29X9HG7e5DhtVcyRsH1MYHLzFR4kzmfjQ90PT5K9Y-=w1200',
+  maps4: 'https://lh3.googleusercontent.com/gps-cs-s/AHRPTWn8cwtO3rXzx9_VpJP89AZAxPmMJiPO2HDJ3UW167WgBX5ZOaUDxnS-FMacK7LhegHAzy3VPUE0QlBlEc3g9Q8rLUtfxZq2RSo-lPULz5EI-W_C4RlPDwEFCWDVoLPEhAw9y_itA-1MDe5O=w1200',
+};
+
+export const IMAGES = {
+  hero: fotoMaps1,
+  pool: fotoMaps1,
+  poolDetail: chacaraPiscina,
+  socialArea: fotoMaps2,
+  tablesAndChairs: chacaraAreaSocial,
+  deckEvent: fotoMaps3,
+  gourmetChurrasqueira: fotoMaps4,
+  kitchenSupport: chacaraEstrutura,
+};
+
 export const VENUE_INFO = {
   name: 'Chácara Espaço Luz Eventos',
   tagline: 'O Cenário Perfeito para Sua Celebração Memorável',
@@ -176,8 +203,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-maps-1',
     type: 'image',
-    url: '/images/foto-maps-1.jpg',
-    previewUrl: '/images/foto-maps-1.jpg',
+    url: fotoMaps1,
+    previewUrl: fotoMaps1,
+    fallbackUrl: FALLBACK_URLS.maps1,
     title: 'Piscina com Cascata & Solário',
     category: 'piscina',
     alt: 'Piscina cristalina com cascata, solário e iluminação na Chácara Espaço Luz Eventos em Timon-MA.',
@@ -187,8 +215,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-maps-2',
     type: 'image',
-    url: '/images/foto-maps-2.jpg',
-    previewUrl: '/images/foto-maps-2.jpg',
+    url: fotoMaps2,
+    previewUrl: fotoMaps2,
+    fallbackUrl: FALLBACK_URLS.maps2,
     title: 'Área Social e Salão para Confraternizações',
     category: 'estrutura',
     alt: 'Área social ampla e coberta da Chácara Espaço Luz com mesas, cadeiras e circulação livre.',
@@ -198,8 +227,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-maps-3',
     type: 'image',
-    url: '/images/foto-maps-3.jpg',
-    previewUrl: '/images/foto-maps-3.jpg',
+    url: fotoMaps3,
+    previewUrl: fotoMaps3,
+    fallbackUrl: FALLBACK_URLS.maps3,
     title: 'Deck Integrado à Piscina & Eventos',
     category: 'eventos',
     alt: 'Deck ao redor da piscina pronto para recepção e festas na Chácara Espaço Luz.',
@@ -209,8 +239,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-maps-4',
     type: 'image',
-    url: '/images/foto-maps-4.jpg',
-    previewUrl: '/images/foto-maps-4.jpg',
+    url: fotoMaps4,
+    previewUrl: fotoMaps4,
+    fallbackUrl: FALLBACK_URLS.maps4,
     title: 'Área Gourmet, Bancada & Churrasqueira',
     category: 'estrutura',
     alt: 'Área gourmet com churrasqueira, bancada de apoio e freezer na Chácara Espaço Luz.',
@@ -220,8 +251,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-piscina-detalhe',
     type: 'image',
-    url: '/images/chacara-piscina.jpg',
-    previewUrl: '/images/chacara-piscina.jpg',
+    url: chacaraPiscina,
+    previewUrl: chacaraPiscina,
+    fallbackUrl: FALLBACK_URLS.maps1,
     title: 'Piscina com Cascata em Detalhes',
     category: 'piscina',
     alt: 'Detalhe da cascata e área de banho da piscina na Chácara Espaço Luz.',
@@ -231,8 +263,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-mesas-cadeiras',
     type: 'image',
-    url: '/images/chacara-area-social.jpg',
-    previewUrl: '/images/chacara-area-social.jpg',
+    url: chacaraAreaSocial,
+    previewUrl: chacaraAreaSocial,
+    fallbackUrl: FALLBACK_URLS.maps2,
     title: '15 Mesas & 60 Cadeiras Já Inclusas',
     category: 'estrutura',
     alt: 'Mobiliário incluso composto por 15 mesas e 60 cadeiras na Chácara Espaço Luz.',
@@ -242,8 +275,9 @@ export const GALLERY_MEDIA: GalleryMediaItem[] = [
   {
     id: 'gal-apoio-cozinha',
     type: 'image',
-    url: '/images/chacara-estrutura.jpg',
-    previewUrl: '/images/chacara-estrutura.jpg',
+    url: chacaraEstrutura,
+    previewUrl: chacaraEstrutura,
+    fallbackUrl: FALLBACK_URLS.maps4,
     title: 'Cozinha Completa com Fogão & Geladeira',
     category: 'estrutura',
     alt: 'Cozinha com fogão, geladeira e suporte na Chácara Espaço Luz Eventos.',

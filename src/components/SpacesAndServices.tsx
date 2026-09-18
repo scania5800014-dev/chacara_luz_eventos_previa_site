@@ -13,7 +13,7 @@ import {
   CalendarCheck,
   Eye
 } from 'lucide-react';
-import { VENUE_INFO } from '../data/content';
+import { VENUE_INFO, IMAGES, FALLBACK_URLS } from '../data/content';
 
 export const SpacesAndServices: React.FC = () => {
   return (
@@ -110,11 +110,17 @@ export const SpacesAndServices: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="relative rounded-xl overflow-hidden border border-[#D4AF37]/30 shadow-lg">
                 <img
-                  src="/images/foto-maps-2.jpg"
+                  src={IMAGES.socialArea}
                   alt="Área social e salão coberto da Chácara Espaço Luz Eventos"
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (target.src !== FALLBACK_URLS.maps2) {
+                      target.src = FALLBACK_URLS.maps2;
+                    }
+                  }}
                   className="w-full h-64 sm:h-80 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
